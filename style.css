@@ -11,24 +11,34 @@ body {
 
 h1 {
     font-size: 100px;
+    color: aliceblue;
+    backdrop-filter: brightness(0.5);
+    letter-spacing: 4px;
 }
 
 .split {
     width: 50%;
     height: 100%;
     /* top: 0; */
+    overflow: hidden;
 }
 
 .split.left {
     position: absolute;
     left: 0;
     background: pink;
+    background-image: url("https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .split.right {
     position: absolute;
     right: 0;
     background: lightblue;
+    background-image: url('https://diamu.com.bd/wp-content/uploads/2022/04/Samsung-Galaxy-S21-FE-5G-5-768x768.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .btn {
@@ -38,4 +48,32 @@ h1 {
     cursor: pointer;
     font-size: 25px;
     border: 4px solid;
+    transition: 1s background-color;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #000;
+}
+
+.active-left .left {
+    width: 70%;
+}
+
+.active-left .right {
+    width: 30%
+}
+
+.active-right .right {
+    width: 70%;
+}
+
+.active-right .left {
+    width: 30%;
+}
+
+.right,
+.left {
+    transition: width 2s ease-in-out;
 }
